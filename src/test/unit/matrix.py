@@ -1,10 +1,5 @@
 import unittest
-
-import numpy as np
-from numpy.linalg import LinAlgError
-
 from src.model.matrix import Matrix
-from src.model.system_equations import EquationSystem
 
 
 class TestMatrix(unittest.TestCase):
@@ -18,3 +13,9 @@ class TestMatrix(unittest.TestCase):
         self.assertEqual(Matrix(self.ideal_matrix).determinant(), -12, "the determinant is miss calculated")
         self.assertEqual(Matrix(self.matrix_with_missing_coefficient).determinant(), -17,
                          "the determinant is miss calculated")
+
+    def test_change_column(self):
+        new_column = [0,0,0]
+        ma = Matrix(self.ideal_matrix)
+        ma.change_column(1, new_column)
+        self.assertTrue((ma.matrix == [[2,0,1],[3,0,1],[3,0,4]]).all(), "Have a problem in change column system")
