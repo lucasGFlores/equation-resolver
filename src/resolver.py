@@ -23,3 +23,7 @@ class Resolver:
     @staticmethod
     def _result_matrix(systems: list[EquationSystem]) -> np.array:
         pass
+
+    @staticmethod
+    def _get_all_coefficients(equations: list[EquationSystem]) -> set:
+        pass
