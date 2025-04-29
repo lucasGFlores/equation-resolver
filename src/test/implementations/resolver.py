@@ -31,14 +31,14 @@ class TestResolver(unittest.TestCase):
 
     def test_value_matrix(self):
         matrix_ideal = Resolver._value_matrix(self.ideal_equation_list)
-        self.assertEqual(matrix_ideal, [[2,2,1],[3,1,1],[3,1,4]])
+        self.assertEqual(matrix_ideal, [[2.0,2.0,1.0],[3.0,1.0,1.0],[3.0,1.0,4.0]])
 
         matrix_non_alphabetic_equation = Resolver._value_matrix(self.non_alphabetic_equation_list)
-        self.assertEqual(matrix_non_alphabetic_equation,[[2,2,1],[3,1,1],[3,1,4]], "Problem to convert to matrix in alphabetic order")
+        self.assertEqual(matrix_non_alphabetic_equation,[[2.0,2.0,1.0],[3.0,1.0,1.0],[3.0,1.0,4.0]], "Problem to convert to matrix in alphabetic order")
 
         # systems equations with missing coefficient need to be replaced with 0's
         matrix_equation_with_missing_coefficient = Resolver._value_matrix(self.equation_with_missing_coefficient_list)
-        self.assertEqual(matrix_equation_with_missing_coefficient,[[2,2,1],[3,0,1],[3,1,4]], "Problem to convert missing coefficient")
+        self.assertEqual(matrix_equation_with_missing_coefficient,[[2.0,2.0,1.0],[3.0,0,1.0],[3.0,1.0,4.0]], "Problem to convert missing coefficient")
 
     def test_result_matrix(self):
         matrix_ideal = Resolver._value_matrix(self.ideal_equation_list)
