@@ -41,13 +41,13 @@ class TestResolver(unittest.TestCase):
         self.assertEqual(matrix_equation_with_missing_coefficient,[[2.0,2.0,1.0],[3.0,0,1.0],[3.0,1.0,4.0]], "Problem to convert missing coefficient")
 
     def test_result_matrix(self):
-        matrix_ideal = Resolver._value_matrix(self.ideal_equation_list)
+        matrix_ideal = Resolver._result_matrix(self.ideal_equation_list)
         self.assertEqual(matrix_ideal, [6,8,32])
 
-        matrix_non_alphabetic_equation = Resolver.value_matrix(self.non_alphabetic_equation_list)
+        matrix_non_alphabetic_equation = Resolver._result_matrix(self.non_alphabetic_equation_list)
         self.assertEqual(matrix_non_alphabetic_equation, [6,8,32],
                          "Problem to convert to matrix in alphabetic order")
 
-        matrix_equation_with_missing_coefficient = Resolver.value_matrix(self.equation_with_missing_coefficient_list)
+        matrix_equation_with_missing_coefficient = Resolver._result_matrix(self.equation_with_missing_coefficient_list)
         self.assertEqual(matrix_equation_with_missing_coefficient, [6,15,32],
                          "Problem to convert to matrix in alphabetic order")
