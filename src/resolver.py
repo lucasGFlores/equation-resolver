@@ -18,7 +18,15 @@ class Resolver:
 
     @staticmethod
     def _value_matrix(systems: list[EquationSystem]) -> np.array:
-
+        all_coefficient = Resolver._get_all_coefficients(systems)
+        matrix = []
+        for equations in systems:
+            array = equations.to_row()
+            rest_coefficients = set(all_coefficient).difference(equations.coefficients())
+            for coefficient in rest_coefficients:
+                array.insert(all_coefficient.index(coefficient),0)
+            matrix.append(array)
+        return matrix
     @staticmethod
     def _result_matrix(systems: list[EquationSystem]) -> np.array:
         pass
