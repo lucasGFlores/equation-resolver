@@ -27,9 +27,10 @@ class Resolver:
                 array.insert(all_coefficient.index(coefficient),0)
             matrix.append(array)
         return matrix
+
     @staticmethod
     def _result_matrix(systems: list[EquationSystem]) -> np.array:
-        pass
+        return [equation.result for equation in systems]
 
     @staticmethod
     def _get_all_coefficients(equations: list[EquationSystem]) -> list:
