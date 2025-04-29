@@ -1,6 +1,6 @@
 import numpy as np
 
-from model import Matrix, EquationSystem
+from .model import Matrix, EquationSystem
 class Resolver:
     """
     responsibilities:
@@ -18,12 +18,12 @@ class Resolver:
 
     @staticmethod
     def _value_matrix(systems: list[EquationSystem]) -> np.array:
-        pass
 
     @staticmethod
     def _result_matrix(systems: list[EquationSystem]) -> np.array:
         pass
 
     @staticmethod
-    def _get_all_coefficients(equations: list[EquationSystem]) -> set:
-        pass
+    def _get_all_coefficients(equations: list[EquationSystem]) -> list:
+        coefficients: set = set().union(*(equation.coefficients() for equation in equations))
+        return sorted(coefficients)
