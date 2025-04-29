@@ -51,3 +51,10 @@ class TestResolver(unittest.TestCase):
         matrix_equation_with_missing_coefficient = Resolver._result_matrix(self.equation_with_missing_coefficient_list)
         self.assertEqual(matrix_equation_with_missing_coefficient, [6,15,32],
                          "Problem to convert to matrix in alphabetic order")
+
+
+    def test_equation_solution(self):
+        self.assertEqual(Resolver(self.ideal_equation_list).equation_solutions(), {'x': 0.5,'y': -1.5,'z': 8.0})
+        self.assertEqual(Resolver(self.non_alphabetic_equation_list).equation_solutions(), {'x': 0.5,'y': -1.5,'z': 8.0},"Problem with non alphabetic order equations")
+        self.assertEqual(Resolver(self.equation_with_missing_coefficient_list).equation_solutions(), {'x': 47/17,'y': -53/17,'z': 114/17},"Problem with missing coefficient equations")
+

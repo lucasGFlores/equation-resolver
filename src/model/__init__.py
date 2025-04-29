@@ -1,2 +1,2 @@
-from matrix import Matrix
-from system_equations import EquationSystem
+from .matrix import Matrix
+from .system_equations import EquationSystem
