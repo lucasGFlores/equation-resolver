@@ -1,6 +1,6 @@
 import numpy as np
 
-from .model import Matrix, EquationSystem
+from src.resolver.model import Matrix, EquationSystem
 class Resolver:
     """
     responsibilities:

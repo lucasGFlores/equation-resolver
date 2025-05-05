@@ -1,7 +1,7 @@
 import unittest
 
-from src.model import EquationSystem, Matrix
-from src.resolver import Resolver
+from src.resolver.model import EquationSystem
+from src.resolver.resolver import Resolver
 
 
 class TestResolver(unittest.TestCase):
@@ -54,6 +54,7 @@ class TestResolver(unittest.TestCase):
 
 
     def test_equation_solution(self):
+        print(Resolver(self.ideal_equation_list).equation_solutions())
         self.assertEqual(Resolver(self.ideal_equation_list).equation_solutions(), {'x': 0.5,'y': -1.5,'z': 8.0})
         self.assertEqual(Resolver(self.non_alphabetic_equation_list).equation_solutions(), {'x': 0.5,'y': -1.5,'z': 8.0},"Problem with non alphabetic order equations")
         self.assertEqual(Resolver(self.equation_with_missing_coefficient_list).equation_solutions(), {'x': 47/17,'y': -53/17,'z': 114/17},"Problem with missing coefficient equations")

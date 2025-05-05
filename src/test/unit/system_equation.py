@@ -1,5 +1,5 @@
 import unittest
-from src.model.system_equations import EquationSystem
+from src.resolver.model.system_equations import EquationSystem
 
 class TestEquationSystem(unittest.TestCase):
     def setUp(self):
