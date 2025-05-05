@@ -8,11 +8,13 @@ class Matrix:
     def __init__(self, matrix: list):
         self.matrix: np.array = np.array(matrix)
 
-    def change_column(self, column: int, new_column: list) -> None:
+    def change_column(self, column: int, new_column: list) -> "Matrix":
         new_column = np.array(new_column)
         if new_column.shape[0] != self.matrix.shape[0]:
             raise ValueError("row matrix dont have the right size of the original matrix")
-        self.matrix[:,column] = new_column
+        new_matrix = self.matrix.copy()
+        new_matrix[:,column] = new_column
+        return Matrix(list(new_matrix))
 
     def determinant(self) -> float:
         return Matrix._laplace_determinant(self.matrix)
@@ -33,8 +35,8 @@ class Matrix:
          a is the elements. (a11 = 2)
 
          C is the determinant cofactors of the element.(remove the column and the line of the C element)
-         C11 =     (-1)^(1+1) x [[1,1]   =  3
-                                 [1,4]]
+         C11 = (-1)^(1+1) x [[1,1] =  3
+                            [1,4]]
 
         C12 = (-1)^(1+2) x [[3,1]   = -9
                             [3,4]]

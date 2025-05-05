@@ -1,5 +1,5 @@
 import unittest
-from src.model.matrix import Matrix
+from src.resolver.model.matrix import Matrix
 
 
 class TestMatrix(unittest.TestCase):
@@ -17,5 +17,5 @@ class TestMatrix(unittest.TestCase):
     def test_change_column(self):
         new_column = [0,0,0]
         ma = Matrix(self.ideal_matrix)
-        ma.change_column(1, new_column)
-        self.assertTrue((ma.matrix == [[2,0,1],[3,0,1],[3,0,4]]).all(), "Have a problem in change column system")
+        ma2 = ma.change_column(1, new_column)
+        self.assertTrue((ma2.matrix == [[2,0,1],[3,0,1],[3,0,4]]).all(), "Have a problem in change column system")
