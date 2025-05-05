@@ -5,16 +5,19 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="eb2a21c9-06be-4dae-a9ee-74967dc68137" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/resolver/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/implementations/test_resolver.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/unit/test_matrix.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/unit/test_system_equation.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/model/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/resolver/model/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/model/matrix.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/resolver/model/matrix.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/model/system_equations.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/resolver/model/system_equations.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/resolver.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/resolver/resolver.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/implementations/resolver.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/implementations/resolver.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/unit/matrix.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/unit/matrix.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/unit/system_equation.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/unit/system_equation.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/resolver/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/resolver/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/resolver/model/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/resolver/model/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/resolver/model/matrix.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/resolver/model/matrix.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/resolver/resolver.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/resolver/resolver.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/implementations/resolver.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/unit/matrix.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/unit/system_equation.py" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -24,18 +27,18 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
-  "lastFilter": {
-    "state": "OPEN",
-    "assignee": "lucasGFlores"
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;lucasGFlores&quot;
   }
-}]]></component>
-  <component name="GithubPullRequestsUISettings"><![CDATA[{
-  "selectedUrlAndAccountId": {
-    "url": "https://github.com/lucasGFlores/equation-resolver.git",
-    "accountId": "5519ef9f-3f4c-4c0d-835e-46f414700d0a"
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/lucasGFlores/equation-resolver.git&quot;,
+    &quot;accountId&quot;: &quot;5519ef9f-3f4c-4c0d-835e-46f414700d0a&quot;
   }
-}]]></component>
+}</component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 4
 }</component>
@@ -56,92 +59,100 @@
     "Python tests.Python tests for resolver.TestResolver.test_value_matrix.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "feat/resolver"
+    "git-widget-placeholder": "ci/tests",
+    "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable"
   }
 }]]></component>
-  <component name="RunManager" selected="Python tests.Python tests for resolver.TestResolver.test_equation_solution">
-    <configuration name="Python tests for matrix.TestMatrix" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\lucas\Documents\equation-resolver\test\unit" />
+      <recent name="C:\Users\lucas\Documents\equation-resolver\test" />
+      <recent name="C:\Users\lucas\Documents\equation-resolver" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Python tests.Python tests for test_system_equation.TestEquationSystem">
+    <configuration name="Python tests for test.implementations.resolver.TestResolver" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
       <module name="SystemCalculator" />
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/src/test/unit" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/test/implementations" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;matrix.TestMatrix&quot;" />
+      <option name="_new_target" value="&quot;test.implementations.resolver.TestResolver&quot;" />
       <option name="_new_targetType" value="&quot;PYTHON&quot;" />
       <method v="2" />
     </configuration>
-    <configuration name="Python tests for matrix.TestMatrix.test_change_column" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
+    <configuration name="Python tests for test.implementations.resolver.TestResolver.test_equation_solution" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
       <module name="SystemCalculator" />
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/src/test/unit" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/test/implementations" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;matrix.TestMatrix.test_change_column&quot;" />
+      <option name="_new_target" value="&quot;test.implementations.resolver.TestResolver.test_equation_solution&quot;" />
       <option name="_new_targetType" value="&quot;PYTHON&quot;" />
       <method v="2" />
     </configuration>
-    <configuration name="Python tests for resolver.TestResolver" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
+    <configuration name="Python tests for test_system_equation.TestEquationSystem" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
       <module name="SystemCalculator" />
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/src/test/implementations" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/test/unit" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;resolver.TestResolver&quot;" />
+      <option name="_new_target" value="&quot;test_system_equation.TestEquationSystem&quot;" />
       <option name="_new_targetType" value="&quot;PYTHON&quot;" />
       <method v="2" />
     </configuration>
-    <configuration name="Python tests for resolver.TestResolver.test_equation_solution" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
+    <configuration name="Python tests for test_system_equation.TestEquationSystem.test_equation_order" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
       <module name="SystemCalculator" />
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/src/test/implementations" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/test/unit" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;resolver.TestResolver.test_equation_solution&quot;" />
+      <option name="_new_target" value="&quot;test_system_equation.TestEquationSystem.test_equation_order&quot;" />
       <option name="_new_targetType" value="&quot;PYTHON&quot;" />
       <method v="2" />
     </configuration>
-    <configuration name="Python tests for resolver.TestResolver.test_result_matrix" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
+    <configuration name="Python tests for test.unit.matrix.TestMatrix.test_change_column" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
       <module name="SystemCalculator" />
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/src/test/implementations" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/test/unit" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;resolver.TestResolver.test_result_matrix&quot;" />
+      <option name="_new_target" value="&quot;test.unit.matrix.TestMatrix.test_change_column&quot;" />
       <option name="_new_targetType" value="&quot;PYTHON&quot;" />
       <method v="2" />
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Python tests.Python tests for resolver.TestResolver.test_equation_solution" />
-        <item itemvalue="Python tests.Python tests for resolver.TestResolver" />
-        <item itemvalue="Python tests.Python tests for matrix.TestMatrix.test_change_column" />
-        <item itemvalue="Python tests.Python tests for matrix.TestMatrix" />
-        <item itemvalue="Python tests.Python tests for resolver.TestResolver.test_result_matrix" />
+        <item itemvalue="Python tests.Python tests for test_system_equation.TestEquationSystem" />
+        <item itemvalue="Python tests.Python tests for test_system_equation.TestEquationSystem.test_equation_order" />
+        <item itemvalue="Python tests.Python tests for test.implementations.resolver.TestResolver" />
+        <item itemvalue="Python tests.Python tests for test.implementations.resolver.TestResolver.test_equation_solution" />
+        <item itemvalue="Python tests.Python tests for test.unit.matrix.TestMatrix.test_change_column" />
       </list>
     </recent_temporary>
   </component>
