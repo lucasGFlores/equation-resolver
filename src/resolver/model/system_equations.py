@@ -1,5 +1,6 @@
 import dataclasses
 import re
+import string
 from ast import Param
 from typing import Dict
 
@@ -35,6 +36,17 @@ class EquationSystem:
         return [self._coefficient.get(coefficient) for coefficient in sorted(self._coefficient)]
 
     @staticmethod
+    def from_matrices( matrix_value, matrix_result ) -> list["EquationSystem"]:
+        equations = []
+        number_of_coefficients = len(matrix_result)
+        coefficients = EquationSystem._possible_coefficients_list(number_of_coefficients)
+        for value_row, result in zip(matrix_value,matrix_result):
+            equation_value = [f"{value:+}{coefficient}" for coefficient, value in zip(coefficients,value_row)]
+            equation = f"{''.join(equation_value)}={result[0]}"
+            equations.append(EquationSystem.from_string(equation))
+        return equations
+
+    @staticmethod
     def from_string(equation_system: str) ->  "EquationSystem":
         """
         This convert a equation in a string
@@ -54,6 +66,12 @@ class EquationSystem:
         regex = r"([+-]?)(\d*\.?\d*)([a-z])"
         match = re.findall(regex, equation_system)
         return [Coefficient(coefficient) for coefficient in match]
+
+    @staticmethod
+    def _possible_coefficients_list(number_of_coefficients: int) -> list:
+        all_coefficients = list(string.ascii_lowercase)
+        return all_coefficients[:number_of_coefficients+1]
+
 
 
 
