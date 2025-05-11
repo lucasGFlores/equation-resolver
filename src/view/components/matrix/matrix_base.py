@@ -22,11 +22,13 @@ class BaseMatrix(ABC):
 
     def value(self) -> list:
         try:
-            matrix = self._create_matrix_position(self._rows,self._rows)
+            matrix = [[None for _ in range(0,self._column)] for _ in range(0,self._rows)]
             for index in range(0,self._layout.count()):
                row, column,_,_ = self._layout.getItemPosition(index)
                widget: MatrixLabel = self._layout.itemAt(index).widget()
+               print(column)
                matrix[row][column] = widget.value()
+            return matrix
         except ValueError:
             print("Deu ruim no value aqui no matrix base")
 
