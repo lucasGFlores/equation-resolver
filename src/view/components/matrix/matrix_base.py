@@ -30,7 +30,6 @@ class BaseMatrix(ABC):
             for index in range(0,self._layout.count()):
                row, column,_,_ = self._layout.getItemPosition(index)
                widget: MatrixLabel = self._layout.itemAt(index).widget()
-               print(column)
                matrix[row][column] = widget.value()
             return matrix
         except ValueError:
