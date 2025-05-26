@@ -2,6 +2,7 @@ from PySide6.QtWidgets import QMainWindow, QApplication, QLabel, QLineEdit
 from calculator_screen_ui import Ui_MainWindow
 from src.resolver.model import EquationSystem
 from src.resolver.resolver import Resolver
+from src.view.components.equation_widget import EquationWidget
 from src.view.components.matrix.matrix_base import BaseMatrix
 from src.view.components.matrix import MatrixResults, MatrixCoefficients
 
@@ -13,29 +14,12 @@ class CalculatorScreen(QMainWindow, Ui_MainWindow):
         self.setupUi(self)
         self.matrix_coefficients = matrix_coefficients
         self.matrix_result = matrix_result
-        self.button_plus.clicked.connect(self._add_matrix_size)
-        self.button_minus.clicked.connect(self._reduce_matrix_size)
+        self.equation_widget = EquationWidget()
+        self.equation_field.layout().addWidget(self.equation_widget)
+        self.button_plus.clicked.connect(self.equation_widget.add_matrix_size)
+        self.button_minus.clicked.connect(self.equation_widget.reduce_matrix_size)
         self.button_calculate.clicked.connect(self.get_result)
-        self._config_equation_field(self.matrix_coefficients, self.matrix_result)
 
-    def _config_equation_field(self, matrix_coefficients: BaseMatrix, matrix_result: BaseMatrix):
-        self.equation_field.layout().addStretch()
-        self.equation_field.layout().addWidget(matrix_coefficients.widget)
-        self.equation_field.layout().addStretch()
-        labela = QLabel()
-        labela.setText("=")
-        self.equation_field.layout().addWidget(labela)
-        self.equation_field.layout().addStretch()
-        self.equation_field.layout().addWidget(matrix_result.widget)
-        self.equation_field.layout().addStretch()
-
-    def _add_matrix_size(self):
-        self.matrix_coefficients.increase_size()
-        self.matrix_result.increase_size()
-
-    def _reduce_matrix_size(self):
-        self.matrix_coefficients.reduce_size()
-        self.matrix_result.reduce_size()
 
     def get_result(self) -> None:
         equation_list = EquationSystem.from_matrices(self.matrix_coefficients.value(),self.matrix_result.value())
