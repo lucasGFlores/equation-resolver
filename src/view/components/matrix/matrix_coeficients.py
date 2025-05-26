@@ -33,7 +33,9 @@ class MatrixCoefficients(BaseMatrix):
         position_to_add = list(filter(lambda point: point not in actual_positions,
                                      all_positions))
         for position in position_to_add:
-            self._add_matrices_label(position[0],position[1],MatrixLabelCoefficients)
+            row, column = position
+            coefficient = self.list_of_coefficients[column]
+            self._layout.addWidget(MatrixLabelCoefficients(coefficient=coefficient,sign=""), row, column)
 
     def reduce_size(self) -> None:
         actual_positions = self._create_matrix_position(self._rows,self._column)
