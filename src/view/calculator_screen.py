@@ -18,11 +18,13 @@ class CalculatorScreen(QMainWindow, Ui_MainWindow):
         self.button_minus.clicked.connect(self.equation_widget.reduce_matrix_size)
         self.button_calculate.clicked.connect(self.get_result)
 
-
+    @staticmethod
+    def _organize_results(results: dict) -> str:
+        return "\n".join([f"{coefficient}: {result}" for coefficient,result in results.items()])
     def get_result(self) -> None:
         equation_list = self.equation_widget.get_equations()
         result = Resolver(equation_list).equation_solutions()
-        self.label_resposta.setText(str(result))
+        self.label_resposta.setText(self._organize_results(result))
 
     
 if __name__ == "__main__":

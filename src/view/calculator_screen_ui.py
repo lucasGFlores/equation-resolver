@@ -9,15 +9,16 @@
 ################################################################################
 
 from PySide6.QtCore import (QCoreApplication, QDate, QDateTime, QLocale,
-    QMetaObject, QObject, QPoint, QRect,
-    QSize, QTime, QUrl, Qt)
+                            QMetaObject, QObject, QPoint, QRect,
+                            QSize, QTime, QUrl, Qt)
 from PySide6.QtGui import (QBrush, QColor, QConicalGradient, QCursor,
-    QFont, QFontDatabase, QGradient, QIcon,
-    QImage, QKeySequence, QLinearGradient, QPainter,
-    QPalette, QPixmap, QRadialGradient, QTransform)
+                           QFont, QFontDatabase, QGradient, QIcon,
+                           QImage, QKeySequence, QLinearGradient, QPainter,
+                           QPalette, QPixmap, QRadialGradient, QTransform)
 from PySide6.QtWidgets import (QApplication, QHBoxLayout, QLabel, QMainWindow,
-    QPushButton, QScrollArea, QSizePolicy, QStatusBar,
-    QVBoxLayout, QWidget)
+                               QPushButton, QScrollArea, QSizePolicy, QStatusBar,
+                               QVBoxLayout, QWidget)
+
 
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
@@ -45,8 +46,8 @@ class Ui_MainWindow(object):
         font.setPointSize(12)
         self.label_historico.setFont(font)
         self.label_historico.setStyleSheet(u"background-color: rgb(226, 255, 121);\n"
-"color: rgb(0, 0, 0);\n"
-"border-radius: 5px;")
+                                           "color: rgb(0, 0, 0);\n"
+                                           "border-radius: 5px;")
         self.label_historico.setAlignment(Qt.AlignmentFlag.AlignCenter)
 
         self.verticalLayout_3.addWidget(self.label_historico)
@@ -60,7 +61,7 @@ class Ui_MainWindow(object):
         self.scrollArea.setSizePolicy(sizePolicy1)
         self.scrollArea.setHorizontalScrollBarPolicy(Qt.ScrollBarPolicy.ScrollBarAlwaysOff)
         self.scrollArea.setWidgetResizable(True)
-        self.scrollArea.setAlignment(Qt.AlignmentFlag.AlignHCenter|Qt.AlignmentFlag.AlignTop)
+        self.scrollArea.setAlignment(Qt.AlignmentFlag.AlignHCenter | Qt.AlignmentFlag.AlignTop)
         self.scrollAreaWidgetContents = QWidget()
         self.scrollAreaWidgetContents.setObjectName(u"scrollAreaWidgetContents")
         self.scrollAreaWidgetContents.setGeometry(QRect(0, 0, 174, 34))
@@ -82,7 +83,6 @@ class Ui_MainWindow(object):
         self.scrollArea.setWidget(self.scrollAreaWidgetContents)
 
         self.verticalLayout_3.addWidget(self.scrollArea)
-
 
         self.horizontalLayout.addWidget(self.widget_2)
 
@@ -129,7 +129,6 @@ class Ui_MainWindow(object):
 
         self.horizontalLayout_2.addWidget(self.button_plus)
 
-
         self.verticalLayout_5.addWidget(self.widget_3)
 
         self.button_calculate = QPushButton(self.widget_6)
@@ -139,6 +138,10 @@ class Ui_MainWindow(object):
 
         self.label_resposta = QLabel(self.widget_6)
         self.label_resposta.setObjectName(u"label_resposta")
+        self.label_resposta.setStyleSheet("""
+    font-size: 18px;
+    
+""")
         sizePolicy4 = QSizePolicy(QSizePolicy.Policy.Preferred, QSizePolicy.Policy.Preferred)
         sizePolicy4.setHorizontalStretch(0)
         sizePolicy4.setVerticalStretch(0)
@@ -149,9 +152,7 @@ class Ui_MainWindow(object):
 
         self.verticalLayout_5.addWidget(self.label_resposta)
 
-
         self.verticalLayout_4.addWidget(self.widget_6)
-
 
         self.horizontalLayout.addWidget(self.widget)
 
@@ -163,6 +164,7 @@ class Ui_MainWindow(object):
         self.retranslateUi(MainWindow)
 
         QMetaObject.connectSlotsByName(MainWindow)
+
     # setupUi
 
     def retranslateUi(self, MainWindow):
@@ -172,6 +174,4 @@ class Ui_MainWindow(object):
         self.button_minus.setText(QCoreApplication.translate("MainWindow", u"-", None))
         self.button_plus.setText(QCoreApplication.translate("MainWindow", u"+", None))
         self.button_calculate.setText(QCoreApplication.translate("MainWindow", u"CALCULAR", None))
-        self.label_resposta.setText(QCoreApplication.translate("MainWindow", u"TextLabel", None))
     # retranslateUi
-
