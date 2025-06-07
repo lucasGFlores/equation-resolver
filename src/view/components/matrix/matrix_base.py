@@ -2,19 +2,21 @@ from abc import ABC, abstractmethod
 from PySide6.QtWidgets import QWidget, QGridLayout, QSizePolicy
 
 from src.view.components.matrix.label.matrix_label import MatrixLabel
+from .label.matrix_label_coeficients import MatrixLabelCoefficients
 from .label.matrix_value import MatrixValue
 
 
 class BaseMatrix(ABC):
     _rows = 1
     _column = 1
-    def __init__(self,rows:int =1,column:int =1,matrix_label_class: type[MatrixValue] = MatrixLabel,parent=None):
+    def __init__(self,rows:int =1,column:int =1,sign_style_sheet: str ="color:black;",parent=None):
+        self._style = sign_style_sheet
         self._rows = rows
         self._column = column
         self.widget = QWidget(parent=parent)
         self.widget.setSizePolicy(QSizePolicy.Policy.Maximum, QSizePolicy.Policy.Maximum)
         self.widget.setLayout(QGridLayout())
-        self._add_matrices_label(self._rows,self._column,matrix_label_class)
+        self._add_matrices_label(self._rows,self._column)
         self.widget.setContentsMargins(0, 0, 0, 0)
         self.widget.layout().setSpacing(0)
 
@@ -35,10 +37,10 @@ class BaseMatrix(ABC):
         except ValueError:
             print("Deu ruim no value aqui no matrix base")
 
-    def _add_matrices_label(self, rows:int, columns:int, matrix_label_class : MatrixValue):
+    def _add_matrices_label(self, rows:int, columns:int):
         for row in range(0,rows):
             for column in range(0,columns):
-                self._layout.addWidget(matrix_label_class(),row,column)
+                self._layout.addWidget(MatrixLabelCoefficients(sign_style_sheet=self._style),row,column)
 
     @abstractmethod
     def reduce_size(self) -> None:

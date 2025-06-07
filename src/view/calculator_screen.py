@@ -1,5 +1,5 @@
 from PySide6.QtWidgets import QMainWindow, QApplication, QLabel, QLineEdit
-from calculator_screen_ui import Ui_MainWindow
+from teste_screen import Ui_MainWindow
 from src.resolver.model import EquationSystem
 from src.resolver.resolver import Resolver
 from src.view.components.equation_widget import EquationWidget
@@ -20,6 +20,7 @@ class CalculatorScreen(QMainWindow, Ui_MainWindow):
 
     @staticmethod
     def _organize_results(results: dict) -> str:
+        print(results)
         return "\n".join([f"{coefficient}: {result}" for coefficient,result in results.items()])
     def get_result(self) -> None:
         equation_list = self.equation_widget.get_equations()

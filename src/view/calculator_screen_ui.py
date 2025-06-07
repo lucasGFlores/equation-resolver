@@ -29,39 +29,17 @@ class Ui_MainWindow(object):
         self.centralwidget.setObjectName(u"centralwidget")
         self.horizontalLayout = QHBoxLayout(self.centralwidget)
         self.horizontalLayout.setObjectName(u"horizontalLayout")
-        self.widget_2 = QWidget(self.centralwidget)
-        self.widget_2.setObjectName(u"widget_2")
         sizePolicy = QSizePolicy(QSizePolicy.Policy.Preferred, QSizePolicy.Policy.Preferred)
         sizePolicy.setHorizontalStretch(1)
         sizePolicy.setVerticalStretch(0)
-        sizePolicy.setHeightForWidth(self.widget_2.sizePolicy().hasHeightForWidth())
-        self.widget_2.setSizePolicy(sizePolicy)
-        self.verticalLayout_3 = QVBoxLayout(self.widget_2)
-        self.verticalLayout_3.setObjectName(u"verticalLayout_3")
-        self.label_historico = QLabel(self.widget_2)
-        self.label_historico.setObjectName(u"label_historico")
-        self.label_historico.setMinimumSize(QSize(0, 30))
         font = QFont()
         font.setFamilies([u"Times New Roman"])
         font.setPointSize(12)
-        self.label_historico.setFont(font)
-        self.label_historico.setStyleSheet(u"background-color: rgb(226, 255, 121);\n"
-                                           "color: rgb(0, 0, 0);\n"
-                                           "border-radius: 5px;")
-        self.label_historico.setAlignment(Qt.AlignmentFlag.AlignCenter)
 
-        self.verticalLayout_3.addWidget(self.label_historico)
 
-        self.scrollArea = QScrollArea(self.widget_2)
-        self.scrollArea.setObjectName(u"scrollArea")
         sizePolicy1 = QSizePolicy(QSizePolicy.Policy.Expanding, QSizePolicy.Policy.Expanding)
         sizePolicy1.setHorizontalStretch(1)
         sizePolicy1.setVerticalStretch(0)
-        sizePolicy1.setHeightForWidth(self.scrollArea.sizePolicy().hasHeightForWidth())
-        self.scrollArea.setSizePolicy(sizePolicy1)
-        self.scrollArea.setHorizontalScrollBarPolicy(Qt.ScrollBarPolicy.ScrollBarAlwaysOff)
-        self.scrollArea.setWidgetResizable(True)
-        self.scrollArea.setAlignment(Qt.AlignmentFlag.AlignHCenter | Qt.AlignmentFlag.AlignTop)
         self.scrollAreaWidgetContents = QWidget()
         self.scrollAreaWidgetContents.setObjectName(u"scrollAreaWidgetContents")
         self.scrollAreaWidgetContents.setGeometry(QRect(0, 0, 174, 34))
@@ -80,11 +58,8 @@ class Ui_MainWindow(object):
 
         self.verticalLayout.addWidget(self.label_2)
 
-        self.scrollArea.setWidget(self.scrollAreaWidgetContents)
 
-        self.verticalLayout_3.addWidget(self.scrollArea)
 
-        self.horizontalLayout.addWidget(self.widget_2)
 
         self.widget = QWidget(self.centralwidget)
         self.widget.setObjectName(u"widget")
@@ -169,7 +144,6 @@ class Ui_MainWindow(object):
 
     def retranslateUi(self, MainWindow):
         MainWindow.setWindowTitle(QCoreApplication.translate("MainWindow", u"MainWindow", None))
-        self.label_historico.setText(QCoreApplication.translate("MainWindow", u"Historico", None))
         self.label_2.setText(QCoreApplication.translate("MainWindow", u"TESTE", None))
         self.button_minus.setText(QCoreApplication.translate("MainWindow", u"-", None))
         self.button_plus.setText(QCoreApplication.translate("MainWindow", u"+", None))

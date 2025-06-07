@@ -53,6 +53,11 @@ class Resolver:
 
     @staticmethod
     def is_infinity(results: dict):
-        value = results.get(0)
-        print(value)
+        """
+        When the determinant calculus generates a 0/0 the float system return a Nan.
+        A Nan can be recognized by the 'not equal', because  nan != nan will return true
+        :param results:
+        :return:
+        """
+        value = list(results.values())[0]
         return value != value or value is None

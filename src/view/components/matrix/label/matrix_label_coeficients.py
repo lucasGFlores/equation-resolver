@@ -23,7 +23,7 @@ class MatrixLabelCoefficients(QWidget):
 
         coefficient_label = QLabel()
         coefficient_label.setText(coefficient)
-        coefficient_label.setStyleSheet("color:black;")
+        coefficient_label.setStyleSheet(sign_style_sheet)
         coefficient_label.setFont(font)
         self.layout().addWidget(sign_label)
         self.layout().addWidget(self._label)

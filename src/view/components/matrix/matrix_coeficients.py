@@ -10,7 +10,7 @@ from .label.matrix_label import MatrixLabel
 class MatrixCoefficients(BaseMatrix):
     list_of_coefficients = list(string.ascii_lowercase)
     def __init__(self,size=1,parent=None):
-        super().__init__(rows=size,column=size,matrix_label_class=MatrixLabelCoefficients,parent=parent)
+        super().__init__(rows=size,column=size,parent=parent)
 
     @property
     def _matrix_size(self):
@@ -35,7 +35,10 @@ class MatrixCoefficients(BaseMatrix):
         for position in position_to_add:
             row, column = position
             coefficient = self.list_of_coefficients[column]
-            self._layout.addWidget(MatrixLabelCoefficients(coefficient=coefficient,sign=""), row, column)
+            if column == 0:
+                self._layout.addWidget(MatrixLabelCoefficients(coefficient=coefficient, sign="", sign_style_sheet="color:white"), row, column)
+                continue
+            self._layout.addWidget(MatrixLabelCoefficients(coefficient=coefficient,sign="+", sign_style_sheet="color:white"), row, column)
 
     def reduce_size(self) -> None:
         actual_positions = self._create_matrix_position(self._rows,self._column)
@@ -48,15 +51,15 @@ class MatrixCoefficients(BaseMatrix):
             widget.setParent(None)
             self._layout.removeWidget(widget)
 
-    def _add_matrices_label(self, rows: int, columns: int, matrix_label_class: type[MatrixLabelCoefficients]):
+    def _add_matrices_label(self, rows: int, columns: int):
         # inserir forma mais perfomática
         for row in range(0, rows):
             for column in range(0, columns):
                 coefficient = self.list_of_coefficients[column]
                 if column == 0:
-                    self._layout.addWidget(matrix_label_class(coefficient=coefficient,sign=""), row, column)
+                    self._layout.addWidget(MatrixLabelCoefficients(coefficient=coefficient,sign="",sign_style_sheet="color:white"), row, column)
                     continue
-                self._layout.addWidget(matrix_label_class(coefficient=coefficient), row, column)
+                self._layout.addWidget(MatrixLabelCoefficients(coefficient=coefficient,sign_style_sheet="color:white"), row, column)
 
 
 
