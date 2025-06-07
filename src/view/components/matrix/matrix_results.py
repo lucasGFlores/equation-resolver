@@ -1,7 +1,8 @@
 from abc import ABC
 
+from .label.matrix_label_coeficients import MatrixLabelCoefficients
 from .matrix_base import BaseMatrix
-from ..matrix_label import MatrixLabel
+from .label.matrix_label import (MatrixLabel)
 
 
 class MatrixResults(BaseMatrix, ABC):
@@ -15,5 +16,10 @@ class MatrixResults(BaseMatrix, ABC):
         widget.setParent(None)
 
     def increase_size(self) -> None:
-        self._layout.addWidget(MatrixLabel(), self._rows, 0)
+        self._layout.addWidget(MatrixLabelCoefficients(sign="=", coefficient="",sign_style_sheet="font-size: 20px;color:white;"), self._rows, 0,)
         self._rows += 1
+
+    def _add_matrices_label(self, rows: int, columns: int):
+        for row in range(0, rows):
+            for column in range(0, columns):
+                self._layout.addWidget(MatrixLabelCoefficients(sign="=", coefficient="",sign_style_sheet="font-size: 20px;color:white;"), row, column)

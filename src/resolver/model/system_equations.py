@@ -6,8 +6,6 @@ from typing import Dict
 
 @dataclasses.dataclass
 class Coefficient:
-    value: float = None
-    coefficient = None
     def __init__(self, info: tuple[str,str,str]):
         """
         :param info: [('', '2', 'x'), ('+', '2', 'y')]
@@ -20,9 +18,6 @@ class Coefficient:
 
 
 class EquationSystem:
-    _coefficient: dict = None
-    result: float = None
-
     def __init__(self, coefficient, result: float):
         self._coefficient = coefficient
         self.result = result

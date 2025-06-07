@@ -1,3 +1,5 @@
+import math
+
 import numpy as np
 
 from src.resolver.model import Matrix, EquationSystem
@@ -41,3 +43,21 @@ class Resolver:
     def _get_all_coefficients(equations: list[EquationSystem]) -> list:
         coefficients: set = set().union(*(equation.coefficients() for equation in equations))
         return sorted(coefficients)
+
+    @staticmethod
+    def depended_equations(results: dict) -> bool:
+        for coe , result in results.items():
+            if math.isinf(result):
+                return True
+        return False
+
+    @staticmethod
+    def is_infinity(results: dict):
+        """
+        When the determinant calculus generates a 0/0 the float system return a Nan.
+        A Nan can be recognized by the 'not equal', because  nan != nan will return true
+        :param results:
+        :return:
+        """
+        value = list(results.values())[0]
+        return value != value or value is None
