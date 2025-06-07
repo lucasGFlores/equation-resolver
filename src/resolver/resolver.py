@@ -1,3 +1,5 @@
+import math
+
 import numpy as np
 
 from src.resolver.model import Matrix, EquationSystem
@@ -41,3 +43,16 @@ class Resolver:
     def _get_all_coefficients(equations: list[EquationSystem]) -> list:
         coefficients: set = set().union(*(equation.coefficients() for equation in equations))
         return sorted(coefficients)
+
+    @staticmethod
+    def depended_equations(results: dict) -> bool:
+        for coe , result in results.items():
+            if math.isinf(result):
+                return True
+        return False
+
+    @staticmethod
+    def is_infinity(results: dict):
+        value = results.get(0)
+        print(value)
+        return value != value or value is None

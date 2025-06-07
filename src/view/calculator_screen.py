@@ -24,7 +24,12 @@ class CalculatorScreen(QMainWindow, Ui_MainWindow):
     def get_result(self) -> None:
         equation_list = self.equation_widget.get_equations()
         result = Resolver(equation_list).equation_solutions()
-        self.label_resposta.setText(self._organize_results(result))
+        if Resolver.depended_equations(result):
+            self.label_resposta.setText("No solution exist")
+        elif Resolver.is_infinity(result):
+            self.label_resposta.setText("Have infinity solutions")
+        else:
+            self.label_resposta.setText(self._organize_results(result))
 
     
 if __name__ == "__main__":
