@@ -1,10 +1,8 @@
 from PySide6.QtWidgets import QMainWindow, QApplication, QLabel, QLineEdit
-from teste_screen import Ui_MainWindow
-from src.resolver.model import EquationSystem
-from src.resolver.resolver import Resolver
-from src.view.components.equation_widget import EquationWidget
-from src.view.components.matrix.matrix_base import BaseMatrix
-from src.view.components.matrix import MatrixResults, MatrixCoefficients
+from .calculator_screen_ui import Ui_MainWindow
+from ..resolver.resolver import Resolver
+from .components.equation_widget import EquationWidget
+from .components.matrix.matrix_base import BaseMatrix
 
 
 class CalculatorScreen(QMainWindow, Ui_MainWindow):
@@ -32,9 +30,3 @@ class CalculatorScreen(QMainWindow, Ui_MainWindow):
         else:
             self.label_resposta.setText(self._organize_results(result))
 
-    
-if __name__ == "__main__":
-    app = QApplication()
-    screen = CalculatorScreen(MatrixCoefficients(size=2), MatrixResults(rows=2))
-    screen.showFullScreen()
-    app.exec()
