@@ -19,14 +19,16 @@ class CalculatorScreen(QMainWindow, Ui_MainWindow):
     @staticmethod
     def _organize_results(results: dict) -> str:
         print(results)
-        return "\n".join([f"{coefficient}: {result}" for coefficient,result in results.items()])
+        return "\n".join(
+            [f"{coefficient}: {result}" for coefficient, result in results.items()]
+        )
+
     def get_result(self) -> None:
         equation_list = self.equation_widget.get_equations()
         result = Resolver(equation_list).equation_solutions()
         if Resolver.depended_equations(result):
-            self.label_resposta.setText("No solution exist")
+            self.label_resposta.setText("Não existe solução")
         elif Resolver.is_infinity(result):
-            self.label_resposta.setText("Have infinity solutions")
+            self.label_resposta.setText("Tem infinitas soluções")
         else:
             self.label_resposta.setText(self._organize_results(result))
-
