@@ -1,20 +1,20 @@
-# System equation resolver
-A python application with the purpose to resolve equation systems using Cramer Rule
+# Resolvedor de Sistemas de Equações
+Uma aplicação Python com o objetivo de resolver sistemas de equações usando a Regra de Cramer
 
-# Atributes
-This program give a way to easily resolve system equations, having the atributes:
-- The system can hold more than 10 coefficients
-- handling for math erros in equation solving
+# Atributos
+Este programa permite resolver sistemas de equações facilmente, possuindo os seguintes atributos:
+- O sistema pode ter mais de 10 coeficientes
+- Tratamento de erros matemáticos na resolução das equações
 
-# Erros Handles
-- **Unique solution** - equations with one exact answer
-- **Infinite solutions** - undertermined equation
-- **No solution** - inconsistent equations
+# Tratamento de Erros
+- **Solução única** - equações com uma resposta exata
+- **Infinitas soluções** - equação indeterminada
+- **Sem solução** - equações inconsistentes
 
-# Features
-- UI to insert the equation atributes
-- The UI can change the quantity of coefficients for your equations needs
-- Support for decimals coefficients
+# Funcionalidades
+- Interface para inserir os atributos da equação
+- A interface pode alterar a quantidade de coeficientes conforme a necessidade das suas equações
+- Suporte para coeficientes decimais
 
-# How to run the project
-Download the "main.exe" file and run it!
+# Como executar o projeto
+Baixe o arquivo "main.exe" e execute-o!

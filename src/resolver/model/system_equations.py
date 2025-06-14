@@ -4,16 +4,17 @@ import string
 from ast import Param
 from typing import Dict
 
+
 @dataclasses.dataclass
 class Coefficient:
-    def __init__(self, info: tuple[str,str,str]):
+    def __init__(self, info: tuple[str, str, str]):
         """
         :param info: [('', '2', 'x'), ('+', '2', 'y')]
-        first = signal
-        second = value
-        coefficient = y
+        primeiro = sinal
+        segundo = valor
+        terceiro = coeficiente
         """
-        self.value = float(info[0]+f"{info[1] if info[1] != '' else 1}")
+        self.value = float(info[0] + f"{info[1] if info[1] != '' else 1}")
         self.coefficient = info[2]
 
 
@@ -22,39 +23,47 @@ class EquationSystem:
         self._coefficient = coefficient
         self.result = result
 
-
-
     def coefficients(self) -> set:
         return set(self._coefficient)
 
     def to_row(self) -> list[float]:
-        return [self._coefficient.get(coefficient) for coefficient in sorted(self._coefficient)]
+        return [
+            self._coefficient.get(coefficient)
+            for coefficient in sorted(self._coefficient)
+        ]
 
     @staticmethod
-    def from_matrices( matrix_value, matrix_result ) -> list["EquationSystem"]:
+    def from_matrices(matrix_value, matrix_result) -> list["EquationSystem"]:
         equations = []
         number_of_coefficients = len(matrix_result)
-        coefficients = EquationSystem._possible_coefficients_list(number_of_coefficients)
-        for value_row, result in zip(matrix_value,matrix_result):
-            equation_value = [f"{value:+}{coefficient}" for coefficient, value in zip(coefficients,value_row)]
+        coefficients = EquationSystem._possible_coefficients_list(
+            number_of_coefficients
+        )
+        for value_row, result in zip(matrix_value, matrix_result):
+            equation_value = [
+                f"{value:+}{coefficient}"
+                for coefficient, value in zip(coefficients, value_row)
+            ]
             equation = f"{''.join(equation_value)}={result[0]}"
             equations.append(EquationSystem.from_string(equation))
         return equations
 
     @staticmethod
-    def from_string(equation_system: str) ->  "EquationSystem":
+    def from_string(equation_system: str) -> "EquationSystem":
         """
-        This convert a equation in a string
+        Converte uma equação em uma string
         :param equation_system: 2x+2y=6
-        :return: A structure of Equation
+        :return: Uma estrutura de Equation
         """
-        # first part,find the coefficient and their values
+        # primeira parte, encontra os coeficientes e seus valores
         coefficients = EquationSystem._coefficients_from(equation_system)
-        coefficients_dict = {coefficient.coefficient: coefficient.value for coefficient in coefficients}
+        coefficients_dict = {
+            coefficient.coefficient: coefficient.value for coefficient in coefficients
+        }
 
-        # get result from the equation
+        # obtém o resultado da equação
         result = float(equation_system.split("=")[1].strip())
-        return EquationSystem(coefficients_dict,result)
+        return EquationSystem(coefficients_dict, result)
 
     @staticmethod
     def _coefficients_from(equation_system: str) -> [Coefficient]:
@@ -65,8 +74,4 @@ class EquationSystem:
     @staticmethod
     def _possible_coefficients_list(number_of_coefficients: int) -> list:
         all_coefficients = list(string.ascii_lowercase)
-        return all_coefficients[:number_of_coefficients+1]
-
-
-
-
+        return all_coefficients[: number_of_coefficients + 1]

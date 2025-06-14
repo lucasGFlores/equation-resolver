@@ -3,13 +3,15 @@ import math
 import numpy as np
 
 from src.resolver.model import Matrix, EquationSystem
+
 class Resolver:
     """
-    responsibilities:
-        - get the equations systems
-        - form the value matrix and result matrix
-        - calculate the result of the equations
+    responsabilidades:
+        - obter os sistemas de equações
+        - formar a matriz de valores e a matriz de resultados
+        - calcular o resultado das equações
     """
+
     def __init__(self, equations: list[EquationSystem]):
         self.equations = equations
 
@@ -19,9 +21,10 @@ class Resolver:
         result_matrix = self._result_matrix(self.equations)
         determinant_value = value_matrix.determinant()
         return {
-            coefficients :
-                value_matrix.change_column(num,result_matrix).determinant()/determinant_value
-          for num, coefficients in enumerate(all_coefficients)}
+            coefficients: value_matrix.change_column(num, result_matrix).determinant()
+            / determinant_value
+            for num, coefficients in enumerate(all_coefficients)
+        }
 
     @staticmethod
     def _value_matrix(systems: list[EquationSystem]) -> np.array:
@@ -29,9 +32,11 @@ class Resolver:
         matrix = []
         for equations in systems:
             array = equations.to_row()
-            rest_coefficients = set(all_coefficient).difference(equations.coefficients())
+            rest_coefficients = set(all_coefficient).difference(
+                equations.coefficients()
+            )
             for coefficient in rest_coefficients:
-                array.insert(all_coefficient.index(coefficient),0)
+                array.insert(all_coefficient.index(coefficient), 0)
             matrix.append(array)
         return matrix
 
@@ -41,12 +46,14 @@ class Resolver:
 
     @staticmethod
     def _get_all_coefficients(equations: list[EquationSystem]) -> list:
-        coefficients: set = set().union(*(equation.coefficients() for equation in equations))
+        coefficients: set = set().union(
+            *(equation.coefficients() for equation in equations)
+        )
         return sorted(coefficients)
 
     @staticmethod
     def depended_equations(results: dict) -> bool:
-        for coe , result in results.items():
+        for coe, result in results.items():
             if math.isinf(result):
                 return True
         return False
@@ -54,8 +61,8 @@ class Resolver:
     @staticmethod
     def is_infinity(results: dict):
         """
-        When the determinant calculus generates a 0/0 the float system return a Nan.
-        A Nan can be recognized by the 'not equal', because  nan != nan will return true
+        Quando o cálculo do determinante gera um 0/0, o sistema float retorna um Nan.
+        Um Nan pode ser reconhecido pelo 'diferente', pois nan != nan retornará verdadeiro
         :param results:
         :return:
         """

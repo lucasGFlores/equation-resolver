@@ -20,8 +20,6 @@ class BaseMatrix(ABC):
         self.widget.setContentsMargins(0, 0, 0, 0)
         self.widget.layout().setSpacing(0)
 
-
-
     @property
     def _layout(self) -> QGridLayout:
         return self.widget.layout()
