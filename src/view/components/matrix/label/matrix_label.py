@@ -24,6 +24,6 @@ class MatrixLabel(QLineEdit):
         self.setAlignment(Qt.AlignmentFlag.AlignHCenter)
         self.font().setPointSize(15)
         self.setFont(self.font())
-        regex = QRegularExpression(r"\d+([.]\d*)")
+        regex = QRegularExpression(r"-?(?:\d+\.?\d*|\.\d+)")
         validator = QRegularExpressionValidator(regex, self)
         self.setValidator(validator)
