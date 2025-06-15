@@ -27,5 +27,6 @@ class EquationWidget(QWidget):
         self._matrix_results.reduce_size()
 
     def get_equations(self) -> [EquationSystem]:
+        print(self._matrix_coefficients.value())
         return EquationSystem.from_matrices(self._matrix_coefficients.value(), self._matrix_results.value())
 

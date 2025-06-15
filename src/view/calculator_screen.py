@@ -19,9 +19,11 @@ class CalculatorScreen(QMainWindow, Ui_MainWindow):
     @staticmethod
     def _organize_results(results: dict) -> str:
         print(results)
-        return "\n".join(
+        result_string = "Resultados:\n"
+        result_string += "\n".join(
             [f"{coefficient}: {result}" for coefficient, result in results.items()]
         )
+        return result_string
 
     def get_result(self) -> None:
         equation_list = self.equation_widget.get_equations()

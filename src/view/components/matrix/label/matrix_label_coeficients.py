@@ -15,7 +15,7 @@ class MatrixLabelCoefficients(QWidget):
         self.setSizePolicy(QSizePolicy.Preferred,QSizePolicy.Preferred)
         self._label: MatrixLabel = MatrixLabel()
         font = QFont()
-        font.setPointSize(12)
+        font.setPointSize(15)
         sign_label = QLabel()
         sign_label.setText(sign)
         sign_label.setStyleSheet(sign_style_sheet)
